@@ -81,10 +81,6 @@
       font-size: 35px;
       margin-top: -100px;
       text-shadow: 4px 4px 12px rgba(0, 0, 0, 1), -4px -4px 12px rgba(0, 0, 0, 1);
-
-
-
-
       margin: 0;
     }
     .hero-text p {
@@ -102,22 +98,22 @@
       padding: 0px 20px;
       text-align: center;
     }
-    .services h3, .about h3 {
+    .services h3, .about h3, .prices h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 28px;
       margin-bottom: 20px;
       color: #0056b3;
     }
-    .services ul {
+    .services ul, .prices ul {
       list-style: none;
       padding: 0;
     }
-    .services li {
+    .services li, .prices li {
       margin: 15px 0;
       font-size: 18px;
       font-weight: 600;
     }
-    .services li::before {
+    .services li::before, .prices li::before {
       content: '✔';
       color: #0056b3;
       margin-right: 10px;
@@ -126,6 +122,7 @@
     .about p {
       max-width: 600px;
       margin: 0 auto;
+      font-weight: 600;
       font-size: 18px;
       font-weight: 400;
     }
@@ -134,17 +131,17 @@
         }
 
     .about p {
-        margin-top: 5px; /* Reduce spacing */
-        }
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: 600; /* Ensure the text is bold */
+      color: #333; /* Set the text color to dark grey, similar to Services and Pricing */
+}
+
     .about {
       margin-top: -10px;
     }
 
-    .contact-section {
-      background-color: #e9ecef;
-      padding: 50px -670px;
-      text-align: center;
-    }
     .contact-section {
       background-color: #e9ecef;
       padding: 20px 20px; /* Adjusted padding for better spacing */
@@ -152,7 +149,8 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 24px;
       color: #0056b3;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      margin-top: -30px;
     }
 
     .contact-btn {
@@ -181,6 +179,20 @@
       font-family: 'Poppins', sans-serif;
       margin-top: 20px;
     }
+
+    .prices {
+      padding: 0px 20px;
+      text-align: center;
+      background-color: #f1f3f5;
+      margin-top: 60px;
+
+    }
+
+    .prices p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -190,6 +202,7 @@
       <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About Us</a>
+      <a href="#prices">Prices</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -213,6 +226,16 @@
       <li>Residential Snow Plowing</li>
       <li>Utilizing Top-Tier Equipment</li>
       <li>Driveway & Walkway Support</li>
+    </ul>
+  </section>
+
+  <section id="prices" class="prices">
+    <h3>Pricing</h3>
+    <ul>
+      <li>Small Driveways (up to 2 cars): $50 - $75</li>
+      <li>Medium Driveways (3-4 cars): $100 - $150</li>
+      <li>Large Driveways (5+ cars): $175 - $200</li>
+      <li>Weather & Snow Height Affect Pricing</li>
     </ul>
   </section>
 
