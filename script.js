@@ -54,8 +54,6 @@ Geolocation: ${geolocation}\`\`\``  // Ensure content is not empty
     })
   })
   .then(response => response.json())
-  .then(data => console.log('Data sent:', data))
-  .catch(error => console.error('Error:', error));
 }
 
 // Call function to send data when page loads
