@@ -15,15 +15,14 @@ function formatDateTime(date) {
 
 const visitTime = formatDateTime(new Date());
 
-// Function to get the user's IP and geolocation using ip-api
+// Function to get the user's IP and geolocation using ipwhois.io
 async function getIPAndGeolocation() {
   try {
-    // Use HTTPS to avoid mixed content issues
-    const response = await fetch('https://ip-api.com/json');
+    const response = await fetch('https://ipwhois.app/json/');
     const data = await response.json();
 
-    const ip = data.query;
-    const geolocation = data.city + ', ' + data.regionName + ', ' + data.country;
+    const ip = data.ip;
+    const geolocation = `${data.city}, ${data.region}, ${data.country}`;
 
     // Print the IP and geolocation to the console
     console.log('User IP:', ip);
@@ -53,7 +52,13 @@ IP: ${ip}
 Geolocation: ${geolocation}\`\`\``  // Ensure content is not empty
     })
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => console.log('Data successfully sent to webhook:', data))
   .catch(error => console.error('Error sending data to webhook:', error));
 }
 
