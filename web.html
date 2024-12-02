@@ -1,266 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Granby Snow Pros</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snowplow Services</title>
   
-    <!-- Open Graph Meta Tags for Link Preview -->
-    <meta property="og:title" content="Granby Snow Plowers">
-    <meta property="og:description" content="Reliable snow plowing services in Granby, CT. Keeping your driveways, parking lots, and walkways clear and safe during the winter season.">
-    <meta property="og:image" content="https://media.istockphoto.com/id/1439403340/vector/snow-removing-in-the-city-snowplow-working-on-the-snowy-road-snow-truck-cleaning-streets-in.jpg?s=612x612&w=0&k=20&c=gSycw7nTLFptAmrao9m5y6yqyMGBGsO76sSBtiIA9cQ=">
-    <meta property="og:url" content="YOUR_WEBSITE_URL">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  </head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    /* Global Styles */
     body {
-      font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+      background: #eaf6fc url('snowy-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
       color: #333;
-      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
     header {
-      background-color: #0056b3;
-      color: white;
-      padding: 15px 0;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.6); /* Increased transparency */
+      border-bottom: 5px solid #0074cc;
     }
+
+    h1, h2 {
+      font-family: 'Permanent Marker', cursive; /* Use the imported font globally for headers */
+    }
+
+    p {
+      font-family: 'Righteous', cursive; /* Use Righteous font for descriptions */
+    }
+
     header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: 2px;
-      font-weight: 900; /* Add this line to make the text bolder */
+      font-size: 2.6em;
+      font-weight: bold;
+      color: #005fa3;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 5px 0;
     }
 
-    nav {
-      margin-top: 0px;
-    }
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 5px;
-        font-weight: 600;
-        font-size: 16px;
-        position: relative;
+    header p {
+      font-size: 1em;
+      color: #444;
+      margin-top: 5px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
-    nav a:hover::after {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: white;
-        }
-
-        .hero {
-          background: url('https://media.istockphoto.com/id/1439403340/vector/snow-removing-in-the-city-snowplow-working-on-the-snowy-road-snow-truck-cleaning-streets-in.jpg?s=612x612&w=0&k=20&c=gSycw7nTLFptAmrao9m5y6yqyMGBGsO76sSBtiIA9cQ=') no-repeat center center;
-          background-size: cover;
-          width: 100%; /* Set the width to 100% of the container */
-          height: 300px; /* Set the height of the hero section */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          text-align: center;
-        }
-
-    .hero-text {
-      margin-top: -50px;
-      max-width: 80%;
-    }
-    .hero-text h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 35px;
-      margin-top: -100px;
-      text-shadow: 4px 4px 12px rgba(0, 0, 0, 1), -4px -4px 12px rgba(0, 0, 0, 1);
-      margin: 0;
-    }
-    .hero-text p {
-      font-size: 0px;
-      margin-top: 0px;
-      font-weight: 600;
-    }
     .services {
-      padding: 0px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px auto;
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .service {
+      background: rgba(255, 255, 255, 0.7); /* Increased transparency */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
-      margin-top: 0px;
-      margin-bottom: -30px; /* Reduce margin to bring services section closer */
+      max-width: 280px;
+      flex: 1 1 calc(33.333% - 30px);
+      box-sizing: border-box;
+      border: 2px solid #005fa3;
     }
-    .services, .about {
-      padding: 0px 20px;
+
+    .service h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #0074cc;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .service p {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .service img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .contact-pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .contact, .pricing {
+      flex: 1 1 calc(50% - 30px);
+      max-width: 400px;
+      padding: 10px 20px; /* Reduced padding */
+      background: rgba(255, 255, 255, 0.6); /* Increased transparency */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #005fa3;
       text-align: center;
     }
-    .services h3, .about h3, .prices h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #0056b3;
+
+    .contact h2, .pricing h2 {
+      margin-top: -3px;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #0074cc;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
-    .services ul, .prices ul {
-      list-style: none;
+
+    .contact p, .pricing p, .pricing ul li {
+      font-family: 'Righteous', cursive; /* Ensure Righteous font for descriptions and pricing */
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #0074cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.1em;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact a:hover {
+      background: #005fa3;
+    }
+
+    .pricing ul {
+      list-style-type: none;
       padding: 0;
     }
-    .services li, .prices li {
-      margin: 15px 0;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    .services li::before, .prices li::before {
-      content: '✔';
-      color: #0056b3;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-    .about p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: 600;
-      font-size: 18px;
-      font-weight: 400;
-    }
-    .about h3 {
-        margin-bottom: 0px; /* Reduce spacing */
-        }
 
-    .about p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 18px;
-      font-weight: 600; /* Ensure the text is bold */
-      color: #333; /* Set the text color to dark grey, similar to Services and Pricing */
-}
-
-    .about {
-      margin-top: -10px;
-    }
-
-    .contact-section {
-      background-color: #e9ecef;
-      padding: 20px 20px; /* Adjusted padding for better spacing */
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 24px;
-      color: #0056b3;
-      margin-bottom: 20px;
-      margin-top: -30px;
-    }
-
-    .contact-btn {
-      background-color: #0056b3;
-      color: white;
-      padding: 11px 37px;
-      text-decoration: none;
-      font-size: 20px;
-      font-family: 'Poppins', sans-serif;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      margin-bottom: 30px; /* Added margin below the button */
-    }
-
-
-    .contact-btn:hover {
-      background-color: #6d82fc;
-    }
     footer {
-      background-color: #343a40;
+      text-align: center;
+      margin-bottom: 10px;
+      padding: 12px;
+      background: rgba(0, 116, 204, 0.9);
       color: white;
-      padding: 15px 0;
-      text-align: center;
-      font-size: 14px;
-      font-family: 'Poppins', sans-serif;
-      margin-top: 20px;
+      font-size: 1em;
+      margin-top: auto;
     }
 
-    .prices {
-      padding: 0px 20px;
-      text-align: center;
-      background-color: #f1f3f5;
-      margin-top: 60px;
+    /* Responsive Design for Small Screens */
+    @media (max-width: 768px) {
+      .service {
+        flex: 1 1 100%;
+      }
 
+      .contact, .pricing {
+        flex: 1 1 100%;
+      }
     }
-    .price {
-      font-size: 24px; /* Adjust size as needed */
-      font-weight: bold;
-      color: #0056b3; /* Optional: change color */
-    }
-
-    .prices p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
   </style>
 </head>
 <body>
   <header>
-    <h1>Granby Snow Plowers</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About Us</a>
-      <a href="#prices">Prices</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>GRANBY SNOWPLOWING</h1>
+    <p>Customer Satisfaction Guaranteed</p>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Reliable Snow Plowing Services in Granby, CT!</h2>
-      <p>Clearing your driveways, parking lots, and walkways with care.</p>
+  <main>
+    <section class="services">
+      <div class="service">
+        <img src="icon-snowflake.png" alt="Affordable Prices">
+        <h2>Affordable Prices</h2>
+        <p>Guaranteed satisfaction at competitive rates. Prices may vary based on conditions.</p>
+      </div>
+      <div class="service">
+        <img src="icon-plow.png" alt="Reliable Snowplowing">
+        <h2>Reliable Snowplowing</h2>
+        <p>Quick and efficient clearing services for any type of conditions.</p>
+      </div>
+      <div class="service">
+        <img src="icon-salt.png" alt="Salting Services">
+        <h2>Salting Services</h2>
+        <p>Prevent ice and ensure customer safety with our salting solutions.</p>
+      </div>
+    </section>
+
+    <div class="contact-pricing-container">
+      <section class="pricing">
+        <h2>Pricing</h2>
+        <ul>
+          <li>Small Driveways | < 500 sq. ft: $50</li>
+          <li>Medium Driveways | 500–1,000 sq. ft: $100</li>
+          <li>Large Driveways | > 1,000 sq. ft: $150</li>
+        </ul>
+        <p><strong>Weather & Snow Height Affect Pricing</strong></p>
+      </section>
+
+      <section class="contact">
+        <h2>Contact Us Today!</h2>
+        <p>Satisfaction for your snow-clearing needs.</p>
+        <a id="openForm" href="https://docs.google.com/forms/u/1/d/14CmsP-KiffdCtog8tHd_MFXDdxyUBAKoVWc5KH06qxM/edit" target="_blank">GET IN TOUCH</a>
+      </section>
     </div>
-  </section>
-
-  <!-- Swapped the sections: About Us comes first, then Services -->
-  <section id="about" class="about">
-    <h3>About Us</h3>
-    <p>We are a newly established team of three dedicated professionals based in Granby. With top-of-the-line snow plowing equipment, we deliver reliable and efficient snow removal services to keep your driveways, parking lots, and walkways safe during winter. Your satisfaction is our priority!</p>
-  </section>
-
-  <section id="services" class="services">
-    <h3>Our Services</h3>
-    <ul>
-      <li>Residential Snow Plowing</li>
-      <li>Utilizing Top-Tier Equipment</li>
-      <li>Driveway & Walkway Support</li>
-    </ul>
-  </section>
-
-  <section id="prices" class="prices">
-    <h3>Pricing</h3>
-    <ul>
-      <li>Small Driveways | < 500 sq. ft: <span class="price">$50</span></li>
-      <li>Medium Driveways | 500–1,000 sq. ft: <span class="price">$100</span></li>
-      <li>Large Driveways | > 1,000 sq. ft: <span class="price">$150</span></li>
-      <li>Weather & Snow Height Affect Pricing</li>
-    </ul>
-  </section>
-  
-
-  <section id="contact" class="contact-section">
-    <h3>Contact Us</h3>
-<a 
-  href="https://forms.gle/HTRPJtj25DHPGGqX8" 
-  target="_blank" 
-  class="contact-btn" 
-  onclick="notifyFormOpened()">
-  Get in Touch
-</a>
-  </section>
+  </main>
 
   <footer>
-    <p>&copy; 2024 Granby Snow Plowers. All rights reserved.</p>
+    &copy; 2024 Snowplow Services. All rights reserved.
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
